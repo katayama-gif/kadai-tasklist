@@ -10,7 +10,6 @@ class TasksController < ApplicationController
     end
     
     def show 
-        set_task
     end
     
     def new
@@ -29,11 +28,9 @@ class TasksController < ApplicationController
     end
     
     def edit 
-          set_task
     end
     
     def update 
-        set_task 
           
         if @task.update(task_params)
             flash[:success] = 'Task は正常に更新されました'
@@ -45,7 +42,6 @@ class TasksController < ApplicationController
     end
     
     def destroy 
-        set_task
         
       @task.destroy
       flash[:success] = 'Task は正常に削除されました'
